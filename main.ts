@@ -5,9 +5,23 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 input.onButtonPressed(Button.A, function () {
     radio.sendNumber(1)
+    basic.showLeds(`
+        . . . . .
+        . . . . #
+        . # . # .
+        . . # . .
+        . . . . .
+        `)
 })
 radio.setGroup(74)
 basic.forever(function () {
     basic.pause(100)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
     basic.turnRgbLedOff()
 })
